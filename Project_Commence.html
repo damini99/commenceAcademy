@@ -1,0 +1,1800 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--CSS portion-->
+
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+	
+	body{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+	a{
+		color:#777;
+	}
+	a:hover{
+		color:#f39305;
+		text-decoration:none;
+		}
+.text-center{text-align:center;}
+.banner-heading{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 75px;
+    font-weight: 700;
+    line-height: 100px;
+    margin-bottom: 30px;
+	color:#fff;
+}
+.banner-sub-heading{
+	font-family: 'Nanum Gothic', sans-serif;
+	font-size: 30px;
+    font-weight: 300;
+    line-height: 30px;
+    margin-bottom: 50px;
+	color:#fff;
+}
+.btn-warning{background-color:#eca439;}
+.btn-warning:hover{background-color:#f39305;}
+.mybtn{
+	border-radius:0; 
+	height:30px;
+	margin:10px auto;
+	line-height:10px;
+}
+.form-control{
+	color:#d1d1d1;
+	font-size:14px;
+	font-weight:400;
+	border-bottom:2px solid #f39305;
+	border-top:0;
+	border-left:0;
+	border-right:0;
+	height:30px;
+}
+.form-check-input{
+	background-color:#fff !important;
+	border-radius:50% !important;
+	border:2px solid #f39305 !important;
+}
+.modal-content{
+	width:400px;
+	margin:auto;
+}
+
+.modal-header {
+    padding:0.7rem 1rem;
+    border-bottom: 1px solid #e9ecef;
+   border-radius:0;
+	background-color:#9a4a05;
+}
+.modal-title{
+	font-size:16px;
+	font-family: 'Nanum Gothic', sans-serif;
+	text-transform:uppercase;
+	color:#fff;
+	text-align:center;
+	}
+.modal-body{
+	background-image:url('');
+	background-position:top left;
+	background-size:cover;
+	width:100%;
+	padding:1.5rem 3rem 3rem 3rem;
+}
+body.modal-open .supreme-container{
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
+}
+.text-intro{
+	font-size:0.8em;
+	color:#777;
+	text-align:center;
+}
+.form-div{
+	background-color:#fff;
+	padding:2em 1.5em;
+	box-shadow:2px 2px 2px 2px rgba(215,215,215,0.5);
+}
+form{
+	border:0 !important;
+}
+@media (max-width:500px){
+	.modal-content{
+	width:330px;
+	margin:auto;
+}
+.banner-heading{
+	font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 20px;
+}
+.banner-sub-heading{
+	font-size: 10px;
+    font-weight: 200;
+    line-height: 10px;
+    margin-bottom: 40px;
+}
+}
+@media (max-width:768px){
+	.banner-text{
+	padding:150px 0 150px 0;
+}
+	.banner-sub-heading{
+	font-size: 23px;
+    font-weight: 200;
+    line-height: 23px;
+    margin-bottom: 40px;
+}
+}
+</style>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <!--For mega menu-->
+      <style type="text/css">
+        @media all and (min-width: 992px) {
+          .navbar{ padding-top: 0; padding-bottom: 0; }
+          .navbar .has-megamenu{position:static!important;}
+          .navbar .megamenu{left:0; right:0; width:600%; padding:20px; }
+          .navbar .nav-link{ padding-top:1rem; padding-bottom:1rem; padding-left: 10px;}
+        }
+      </style>
+  <!--top-up button-->
+  <style>
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 6em;
+      right: 2em;
+      z-index: 99;
+      border: none;
+      outline: none;
+      background-color: white;
+      color: black;
+      cursor: pointer;
+      padding: 5px;
+      border-radius: 0px 15px 0px 15px;
+      font-size: 15px;
+      box-shadow: 0 0 10px black;
+    }
+    #myBtn:hover {
+      background-color: #555;
+      color: white;
+    }
+    
+  /*Team*/
+  .team{
+    margin: 10em 0;
+    position: relative;  
+   }
+   .team h1{
+    color:#F97300;
+    margin: 2em; 
+   }
+   .team .item{
+    position: relative;
+    height: 250px;
+    width: 350px;
+   }
+   .team .des{
+    background: #F97300;
+    color: #fff;
+    text-align: center;
+    border-bottom-left-radius: 93%;
+    transition:.5s ease-in-out;
+    
+   }
+   .team .item:hover .des{
+ height: 100%;
+ background:#f973007d;
+ position: absolute;
+ width: 89%;
+ padding: 5em;
+ top: 0;
+ border-bottom-left-radius: 0;
+}
+
+/* Course Structure  */
+
+.mySlides {display:none;}
+
+ /* Course Structure  */
+
+
+/*gallery*/
+#more{display: none;}
+#more1{display: none;}
+#more2{display: none;}
+#more3{display: none;}
+#more4{display: none;}
+#more5{display: none;}
+#more6{display: none;}
+#more7{display: none;}
+#more8{display: none;}
+/*gallery*/
+
+/*Footer portion*/
+@import url(https://fontawesome.com/icons/map-marker-alt?style=solid);
+
+
+.footer-distributed{
+	background: #666;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+  font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  lightseagreen;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+/*send button*/
+.box {
+ width: 50%;
+ margin: 0 auto;
+ background: rgba(53, 52, 52, 0.2);
+ padding: 50px;
+ border: 2px solid #fff;
+ background-clip: padding-box;
+ text-align: center;
+}
+
+.button {
+ font-size: 1em;
+ padding: 10px;
+ color: #fff;
+ border: 2px solid #FF9800;
+ border-radius: 20px;
+ text-decoration: none;
+ cursor: pointer;
+ transition: all 0.3s ease-out;
+}
+.button:hover {
+ background: #06D85F;
+}
+
+.overlay {
+ position: fixed;
+ top: 0;
+ bottom: 0;
+ left: 0;
+ right: 0;
+ background: rgba(0, 0, 0, 0.7);
+ transition: opacity 500ms;
+ visibility: hidden;
+ opacity: 0;
+}
+.overlay:target {
+ visibility: visible;
+ opacity: 1;
+}
+
+.popup {
+ margin: 70px auto;
+ padding: 20px;
+ background: #fff;
+ border-radius: 5px;
+ width: 100%;
+ position: relative;
+ transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+ margin-top: 0;
+ color: #333;
+ font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+ position: absolute;
+ top: 20px;
+ right: 30px;
+ transition: all 200ms;
+ font-size: 30px;
+ font-weight: bold;
+ text-decoration: none;
+ color: #333;
+}
+.popup .close:hover {
+ color: #06D85F;
+}
+.popup .content {
+ max-height: 30%;
+ overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+ .box{
+ width: 70%;
+ }
+ .popup{
+ width: 70%;
+ }
+}
+
+
+/*Footer portion*/
+
+
+  </style>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="/js/lib/dummy.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script type="text/javascript"
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+    <!--slideshow-->
+  <style id="compiled-css" type="text/css">
+    .carousel-item {
+      height: 85vh;
+      min-height: 350px;
+      background: no-repeat center center scroll;
+      -webkit-background-size: carousel-control-prev;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    /* EOS */
+  </style>
+  <script id="insert"></script>
+  <!--slideshow-->
+
+  <!--After header part-->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+  <title>Commence Academy</title>
+</head>
+
+<body>
+  <!--HTML portion-->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+  
+  
+  
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand font-italic font-weight-bold 'Open Sans' cursive" href="C:\Users\Hp\Desktop\CSS EX\CSS Project1\Project_Commence.html">
+        <img src="https://tse2.mm.bing.net/th?id=OIP.Bw9wp_ZD4a39bJASBMg1FAAAAA&pid=Api&P=0&w=231&h=153" alt="logo" width="150">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-10">
+          <li class="nav-item font-weight-bold">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item font-weight-bold">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item dropdown font-weight-bold" class="nav-item dropdown has-megamenu">
+            <a class="nav-link dropdown-toggle" href="#course" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            data-toggle="dropdown" aria-expanded="false">
+              Courses
+          </a>
+                <div class="dropdown-menu megamenu"  role="menu">
+                  <div class="row">
+                      <div class="col-md-3">
+                          <div class="col-megamenu">
+                            <h6 class="title">Basic course</h6>
+                            <ul class="list-unstyled">
+                                <li><a href="#course">C/C++</a></li>
+                                <li><a href="#course">HTML</a></li>
+                                <li><a href="#course">CSS</a></li>
+                                <li><a href="#course">JAVASCRIPT</a></li>
+                                <li><a href="#course">TALLY/GST</a></li>
+                                <li><a href="#course">MS-OFFICE</a></li>
+                            </ul>
+                          </div>  <!-- col-megamenu.// -->
+                      </div><!-- end col-3 -->
+                      <div class="col-md-3">
+                        <div class="col-megamenu" style="padding-left:30px;">
+                          <h6 class="title">Advance Courses</h6>
+                              <ul class="list-unstyled">
+                                  <li><a href="#course">CORE_JAVA</a></li>
+                                  <li><a href="#course">ADVANCE_JAVA</a></li>
+                                  <li><a href="#course">PHP</a></li>
+                                  <li><a href="#course">WORDPRESS</a></li>
+                                  <li><a href="#course">WEB_DEVELOPMENT</a></li>
+                                  <li><a href="#course">WEB_DESIGN</a></li>
+                              </ul>
+                          </div>  <!-- col-megamenu.// -->
+                      </div><!-- end col-3 -->
+                      <div class="col-md-3">
+                        <div class="col-megamenu" style="padding-left:100px;">
+                          <h6 class="title">Other Course</h6>
+                              <ul class="list-unstyled">
+                                  <li><a href="#course">BBA</a></li>
+                                  <li><a href="#course">B.COM</a></li>
+                                  <li><a href="#course">BCCA</a></li>
+                                  <li><a href="#course">M.COM</a></li>
+                                  <li><a href="#course">MBA</a></li>
+                                  <li><a href="#course">MHCET</a></li>
+                              </ul>
+                          </div>  <!-- col-megamenu.// -->
+                      </div>   
+                  </div><!-- end row --> 
+      </div> <!-- dropdown-mega-menu.// -->  
+            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" href="#job">Admission</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" href="#gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" href="#job">Jobs</a> </li>
+            
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" href="#team">Our Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-weight-bold" href="#job" class="btn btn-primary mybtn " data-toggle="modal" data-target="#myModal">Login</a>
+          </li>
+      
+         </ul>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Goto</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<!--Navbar-->
+
+<!--Searching working-->
+
+<!--Searching working-->
+
+<!--slides-->
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox" style="padding-bottom: 0%;">
+      <!--Slide One - Set the background image for this slide in the line below-->
+      <div class="carousel-item active"
+        style="background-image: url('https://images.unsplash.com/photo-1559163499-413811fb2344?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTJ8fGxhcHRvcHxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')">
+        <div class="carousel-caption d-none d-md-block" style="text-shadow:2px 1px yellow ;color:white;letter-spacing:2px; word-spacing:5px;">
+          <h2 class="display-4" style="word-spacing: 10em;"><b>COMMENCE ACADEMY</b></h2><br>
+          <h3 class="display-8"><b>A Beginning of Bright Future</b></h3><br><br><br><br><br><br>
+          <p class="lead font-weight-bold" style="text-shadow:2px 2px black;color:white;">" Intelligence plus character that is <br>the goal of true education.<br>
+            Educating the mind without educating <br>the heart is no education at all <br>and it is the most powerful weapon <br>
+            which you can use to change the world. "<br><br><br>
+          </p>
+          
+        </div>
+      </div>
+      <!--Slide Two - Set the background image for this slide in the line below-->
+      <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1561172472-4f2d94f35e87?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80')">
+        <div class="carousel-caption d-none d-md-block" style="text-shadow:2px 1px yellow ;color:black;letter-spacing:2px; word-spacing:5px;">
+          <h3 class="display-4 font-weight-bold"> FIRST STEP</h3><br><br><br><br>
+          <p class="lead font-weight-bold">"We open  the door, but you must enter by yourself.<br> 
+            An investment in knowledge pays the best interest."</p><br><br><br><br><br><br><br><br><br>
+        </div>
+      </div>
+      <!--Slide Three - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1463171379579-3fdfb86d6285?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')">
+        <div class="carousel-caption d-none d-md-block" style="text-shadow:2px 1px yellow ;color:white;letter-spacing:2px; word-spacing:5px;">
+          <h3 class="display-4 font-weight-bold">SECOND STEP</h3><br><br><br><br>
+          <p class="lead font-weight-bold"  style="text-shadow:2px 1px green;color:yellow">"Education breeds confidence,<br> confidence breeds hope and hope breeds peace. <br>
+            Change means that what was before wasn't perfect,<br> people want things to be better."<br><br><br><br><br><br><br><br><br>
+        </p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+<!--slides-->
+
+  <!--After header portion-->
+  <section id="about">
+  ​<div class="w3-container w3-black" style="text-align:center;">
+    <h1>Welcome to learn coding language with Commence Academy</h1>
+    <p>"For every coders, future start here."</p>
+  </div>
+<center>
+  <div class="w3-row-padding">
+    <div class="w3-two">
+      <h2>Choose what to learn</h2>
+      <img src="https://tse4.mm.bing.net/th?id=OIP.PCyLqyUYwVnq6OJbYEXcZAHaFQ&pid=Api&P=0&w=232&h=165">
+      <p>From building websites to analyzing data, the choice is yours. </p>
+      <p>Not sure where to start ? We'll point you in the right direction.
+        A Bright Future Begins here.</p>
+    </div>
+
+    <div class="w3-two">
+      <h2>Learn by doing</h2>
+      <img src="https://tse2.mm.bing.net/th?id=OIP.QIxzZiczhdbYhRSK6t3jZwAAAA&pid=Api&P=0&w=316&h=167">
+      <p>No matter your experience level,
+        you'll be writing real, working code in minutes.</p>
+      <p>We provide you practical knowledge in that you learn by doing yourself.
+        You commonly listen one popular quote 
+        i.e.practice makes person perfect, more practice more efficient result.</p>
+    </div>
+
+    <div class="w3-two">
+      <h2>Get instant feedback</h2>
+      <img src="https://tse4.mm.bing.net/th?id=OIP.6KNpU15DzEvhwsrqt7MilwHaE7&pid=Api&P=0&w=244&h=163">
+      <p>If you have any query about any code is tested as soon as you ask with us, 
+        so you always know if you're on the right track. </p>
+      <p>You'll definitely enjoy while learning codes.</p>
+    </div>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-two">
+      <h2>Put your learning into practice</h2>
+      <img src="https://tse2.mm.bing.net/th?id=OIP.j5dx5hFh1pSiwaAjUlpA8AAAAA&pid=Api&P=0&w=218&h=164">
+      <p>Apply your learning with real-world projects and</p>
+      <p>test your knowledge with participating in technical quizzes organise in your system</p>
+    </div>
+    <div class="w3-two">
+      <h2>Land your Dream job</h2>
+      <img src="https://tse2.mm.bing.net/th?id=OIP.a2tOKPFyVYFWFqe9Hd4JtwHaEK&pid=Api&P=0&w=316&h=178">
+      <p>Coding skills have never been more in-demand.</p>
+      <p>Learn everything you need to take your career to the next level.</p>
+    </div>
+    <div class="w3-two">
+      <h2>Contact us</h2>
+      <img src="https://tse2.mm.bing.net/th?id=OIP.oeADJkeCpDBCOE5BUw4rpQHaE8&pid=Api&P=0&w=245&h=164">
+      <p>Your career start here, contact us without
+        wasting your time learn about career goals in different fields.</p>
+      <p>You can say you get all benefits here, one site consider more knowledge.
+        Get all benefits, contact us for more details.</p>
+    </div>
+  </div>
+</center>
+</section>
+<!--after header portion-->
+
+<!-- Team section -->
+<section id="team" style="padding-bottom: 0%;">
+  <center>
+<div class="team" style="margin-left: 100px;">
+  <div class="container">
+     <h1 class="text-center">Our Team</h1>
+   <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-12 item" style="margin-right: 100px;margin-left: 150px;">
+     <img src="surajsir.jpeg" class="img-fluid" alt="Founder">
+     <div class="des">
+        Suraj Shahu
+          -BBA, MBA
+      </div>
+     <span class="text-muted">Founder</span>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-12 item">
+     <img src="nilesh.jpeg" class="img-fluid" alt="Founder">
+     <div class="des">
+       Nilesh Kewat
+      </div>
+     <span class="text-muted">Founder</span>
+    </div>
+    
+   </div>
+  </div>
+ </div>
+</center>
+</section>
+<!--team section-->
+
+<!-- Course Structure -->
+<section id="course">
+<div>
+  <b><h1 align="center" style="color:orangered;margin-bottom: 2em;">Courses</h1></b>
+</div>
+<div class="w3-content w3-display-container">
+
+  <div class="w3-display-container mySlides">
+    <img src="http://getwallpapers.com/wallpaper/full/e/d/3/810297-download-free-hp-laptop-wallpapers-1920x1200-notebook.jpg" style="width:100%">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+      C & C++ LANGUAGE
+      <p>
+        <ul><li>Basic</li>
+        <li>Operators & Expressions</li>
+        <li>Decision statement</li>
+        <li>Loop control statement</li>
+        <li>Arrays, Pointers, Functions</li>
+        <li>Structures, Unions, Enum & typedef</li>
+        <li>Graphics Programming and File operations</li>
+      </ul>
+    </p>
+    </div>
+  </div>
+  
+  <div class="w3-display-container mySlides">
+    <img src="http://getwallpapers.com/wallpaper/full/e/d/3/810297-download-free-hp-laptop-wallpapers-1920x1200-notebook.jpg" style="width:100%">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+      HTML5, CSS3, JAVASCRIPT
+      <p>
+        <ul>
+          <li>Create website using using HTML and CSS</li>
+          <li>Create interactive content online using javascript</li>
+          <li>How to build real world creative and modern website</li>
+          <li>Coding, tips and resources for best practices to build a professional website</li>
+          <li>Using HTML5, CSS3, JAVASCRIPT</li>
+          <li>Complete roadmap for full stack developer</li>
+          <li>Key points that will help in future</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+  
+  <div class="w3-display-container mySlides">
+    <img src="http://getwallpapers.com/wallpaper/full/e/d/3/810297-download-free-hp-laptop-wallpapers-1920x1200-notebook.jpg" style="width:100%">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+      TALLY/GST
+      <p>
+        <ul>
+          <li>Company creation</li>
+          <li>Ledger creation</li>
+          <li>Group creation</li>
+          <li>Voucher creation</li>
+          <li>Bill wise Detail</li>
+          <li>VAT/Service Tax</li>
+          <li>Back up & Restore Data</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+  
+  <div class="w3-display-container mySlides">
+    <img src="http://getwallpapers.com/wallpaper/full/e/d/3/810297-download-free-hp-laptop-wallpapers-1920x1200-notebook.jpg" style="width:100%">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+      MS-OFFICE
+      <p>
+        <ul>
+          <li>MS Word</li>
+          <li>MS Excel</li>
+          <li>MS Poerpoint</li>
+          <li>MS Outlook</li>
+          <li>Publisher</li>
+          <li>Front Page</li>
+          <li>MS Access</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+  
+  <div class="w3-display-container mySlides">
+    <img src="http://getwallpapers.com/wallpaper/full/e/d/3/810297-download-free-hp-laptop-wallpapers-1920x1200-notebook.jpg" style="width:100%">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+      CORE JAVASCRIPT
+      <p>
+        <uL>
+          <li>Basic of java</li>
+          <li>OOPs concept</li>
+          <li>Data Types</li>
+          <li>Exception handling</li>
+          <li>File handling</li>
+          <li>Arrays</li>
+          <li>List,etc</li>
+        </uL>
+      </p>
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img src="http://getwallpapers.com/wallpaper/full/e/d/3/810297-download-free-hp-laptop-wallpapers-1920x1200-notebook.jpg" style="width:100%">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+     ADVANCE JAVA
+     <p>
+       <ul>
+         <li>Swing</li>
+         <li>Socket programming</li>
+         <li>Thread</li>
+         <li>Collection objects</li>
+         <li>Database connectivity</li>
+         <li>JSP,EJB</li>
+         <li>Web services,etc</li>
+       </ul>
+     </p>
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img src="http://getwallpapers.com/wallpaper/full/e/d/3/810297-download-free-hp-laptop-wallpapers-1920x1200-notebook.jpg" style="width:100%">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+      PHP<p>
+        <ul>
+          <li>Basic concept</li>
+          <li>Databases</li>
+          <li>Templating</li>
+          <li>Servers And Deployment</li>
+          <li>Virtualization</li>
+          <li>Caching</li>
+          <li>Documenting your code</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img src="http://getwallpapers.com/wallpaper/full/e/d/3/810297-download-free-hp-laptop-wallpapers-1920x1200-notebook.jpg" style="width:100%">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+      WORDPRESS<p>
+        <ul>
+          <li>Basic concepts</li>
+          <li>Creating posts</li>
+          <li>Adding images & media</li>
+          <li>Creating Pages</li>
+          <li>Managing content</li>
+          <li>Extending wordpress plugins</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img src="http://getwallpapers.com/wallpaper/full/e/d/3/810297-download-free-hp-laptop-wallpapers-1920x1200-notebook.jpg" style="width:100%">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+      WEB DEVELOPMENT & WEB DESIGN<p>
+        <ul>
+          <li>HTML5,CSS3,JAVASCRIPT</li>
+          <li>CSS Responsive</li>
+          <li>Html DOM</li>
+          <li>CSS Icons</li>
+          <li>XML</li>
+          <li>JSON</li>
+          <li>AJAX</li>
+          <li>Frameworks</li>
+          <li>Backend Roadmaps</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img src="http://getwallpapers.com/wallpaper/full/e/d/3/810297-download-free-hp-laptop-wallpapers-1920x1200-notebook.jpg" style="width:100%">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+      B.COM <p>
+        <ul>
+          <li>Accountancy</li>
+          <li>Financial Systems</li>
+          <li>Taxation</li>
+          <li>Business Management</li>
+          <li>Financial Accounting</li>
+          <li>Business Economics</li>
+          <li>Company Law</li>
+          <li>Cost Accounting</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+  <div class="w3-display-container mySlides">
+    <img src="http://getwallpapers.com/wallpaper/full/e/d/3/810297-download-free-hp-laptop-wallpapers-1920x1200-notebook.jpg" style="width:100%">
+    <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+      BBA<p>
+        <ul>
+          <li>Principles of Management</li>
+          <li>Business Mathematics & Statistics</li>
+          <li>Introduction to Operation Research</li>
+          <li>Business Economics</li>
+          <li>Financial & Management Accounting</li>
+          <li>Production & Material Management</li>
+          <li>Personnel Management & Industry Relations</li>
+          <li>Marketing Management</li>
+        </ul>
+      </p>
+    </div>
+  </div>
+  <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+  
+  </div> 
+</section>
+<!-- Course Structure -->
+
+<!--Gallery section-->
+<section id="gallery">
+<div class="container my-4">
+
+  <p class="font-weight-bold" style="font-size: 30px;">Our enjoyment and Some Achievements.</p>
+
+  <p><strong>Enjoying every moment is the best thing ever and have a some look on <a href="Project_Commence.html"
+        target="_blank">Commence Academy </a>.</p>
+
+  <hr class="my-4">
+
+  <!--Carousel Wrapper-->
+  <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+    <!--Controls-->
+    <div class="controls-top">
+      <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+      <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+    </div>
+    <!--/.Controls-->
+
+    <!--Indicators-->
+    <ol class="carousel-indicators">
+      <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+      <li data-target="#multi-item-example" data-slide-to="1"></li>
+      <li data-target="#multi-item-example" data-slide-to="2"></li>
+    </ol>
+    <!--/.Indicators-->
+
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+
+      <!--First slide-->
+      <div class="carousel-item active">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-2">
+              <img class="card-img-top" src="farewell1.jpeg"
+                alt="farewell1" height="400px" width="50px">
+              <div class="card-body">
+                <h4 class="card-title">Farewell party 2K20</h4>
+                <p class="card-text">Prof. Suraj Shahu got the Mr.Farewell in this occassion.
+                   Here memory with
+                   <span id="dots">...</span>
+                   <span id="more">chief guest and very memeorable day.
+                     We feel happy for students who support us or get their education with enjoyment.
+                   </span></p>
+                <a class="btn btn-primary" style="color:white;" onclick="gallery()" id="myBt">Read more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <img class="card-img-top" src="farewell2.jpeg"
+                alt="Card image cap"  height="400px" width="50px">
+              <div class="card-body">
+                <h4 class="card-title">Farewell party 2K20</h4>
+                <p class="card-text">With students of Commence Academy and smashing enjoyment
+                  <span id="dots1">...</span>
+                   <span id="more1"> get from these moment.</span></p>
+                <a class="btn btn-primary" style="color:white;" onclick="gallery1()" id="myBt1">Read more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <img class="card-img-top" src="student.jpeg"
+                alt="Card image cap" height="400px" width="50px">
+              <div class="card-body">
+                <h4 class="card-title">Students 2020</h4>
+                <p class="card-text">We feel too pleasant that we become the part of Commence Academy,
+                  <span id="dots2">...</span>
+                  <span id="more2">  we learn too many things for getting our dreams.We said thank you to all staffs who support us always.</span></p>
+                <a class="btn btn-primary" style="color:white;" onclick="gallery2()" id="myBt2">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.First slide-->
+
+      <!--Second slide-->
+      <div class="carousel-item">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-2">
+              <img class="card-img-top" src="student1.jpeg"
+                alt="Card image cap" height="400px" width="50px">
+              <div class="card-body">
+                <h4 class="card-title">Students 2019</h4>
+                <p class="card-text">A teacher is a person who surrounds her students with 
+                  <span id="dots3">...</span>
+                  <span id="more3">  inspiration to learn again every day. Thank you to all staff.</span></p>
+                <a class="btn btn-primary" style="color:white;" onclick="gallery3()" id="myBt3">Read more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <img class="card-img-top" src="teachersday.jpeg"
+                alt="Card image cap"  height="400px" width="50px">
+              <div class="card-body">
+                <h4 class="card-title">Teachers Day 2020</h4>
+                <p class="card-text">A teacher's purpose is not create students in his own image, but
+                  <span id="dots4">...</span>
+                   <span id="more4">  to develop students who can create their own image. Happy Teacher's Day.</span></p>
+                <a class="btn btn-primary" style="color:white;" onclick="gallery4()" id="myBt4">Read more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <img class="card-img-top" src="teachersday1.jpeg"
+                alt="Card image cap"  height="400px" width="50px">
+              <div class="card-body">
+                <h4 class="card-title">Teacher's Day </h4>
+                <p class="card-text">Teaching is a very noble profession that shapes the
+                  <span id="dots5">...</span>
+                   <span id="more5"> character, caliber, and future of an individual. If the people remember me as a good teacher,
+                     that will be the biggest honour for me.
+                   </span></p>
+                <a class="btn btn-primary" style="color:white;" onclick="gallery5()" id="myBt5">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.Second slide-->
+
+      <!--Third slide-->
+      <div class="carousel-item">
+
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card mb-2">
+              <img class="card-img-top" src="groupdiscussion.jpeg"
+                alt="Card image cap"  height="400px" width="50px">
+              <div class="card-body">
+                <h4 class="card-title">Group Discussion</h4>
+                <p class="card-text">Discussion is an exchange of knowledge, an argument is an
+                  <span id="dots6">...</span>
+                   <span id="more6"> exchange of ignorance. We know teamwork divides the task and multiplies the success.</span></p>
+                <a class="btn btn-primary" style="color:white;" onclick="gallery6()" id="myBt6">Read more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <img class="card-img-top" src="guestlecture.jpeg"
+                alt="Card image cap" height="400px" width="50px">
+              <div class="card-body">
+                <h4 class="card-title">Guest Lecture</h4>
+                <p class="card-text">It takes nothing to join the crowd. It takes
+                  <span id="dots7">...</span>
+                   <span id="more7"> everything to stand alone. We provide some motivational lectures by experience workers.</span></p>
+                <a class="btn btn-primary" style="color:white;" onclick="gallery7()" id="myBt7">Read more</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 clearfix d-none d-md-block">
+            <div class="card mb-2">
+              <img class="card-img-top" src="gd2.jpeg"
+                alt="Card image cap"  height="400px" width="50px">
+              <div class="card-body">
+                <h4 class="card-title">Group Discussion 2020</h4>
+                <p class="card-text">Group Discussion is very valuable, while group drafting
+                  <span id="dots8">...</span>
+                   <span id="more8"> is less productive. Great minds discuss ideas, average minds discuss events and small minds discuss people.</span></p>
+                <a class="btn btn-primary" style="color:white;" onclick="gallery8()" id="myBt8">Read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!--/.Third slide-->
+
+    </div>
+    <!--/.Slides-->
+
+  </div>
+  <!--/.Carousel Wrapper-->
+
+
+</div>
+</section>
+<!--Gallery section-->
+
+<!-- job form -->
+<section id=job>
+  <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <div class="container" style="margin-bottom: 0%;">
+            <!-- Navbar Brand -->
+            <a href="#" class="navbar-brand">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.Bw9wp_ZD4a39bJASBMg1FAAAAA&pid=Api&P=0&w=231&h=153" alt="logo" width="150">
+               <p>Commence Academy</p>
+              </a>
+        </div>
+    </nav>
+  </header>
+  
+  
+  <div class="container" style="margin-top: 0%;">
+    <div class="row py-5 mt-4 align-items-center">
+        <!-- For Demo Purpose -->
+        <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+            <img src="https://res.cloudinary.com/mhmd/image/upload/v1569543678/form_d9sh6m.svg" alt="" class="img-fluid mb-3 d-none d-md-block">
+            <h1>Create an Account</h1>
+            <p class="font-italic text-muted mb-0">Create an small registration page for more updates. We will soon contact you with your details.</p>
+            <p class="font-italic text-muted">More info- <a href="#about" class="text-muted">
+                <u>Commence Academy</u></a>
+            </p>
+        </div>
+  
+        <!-- Registeration Form -->
+        <div class="col-md-7 col-lg-6 ml-auto">
+            <form action="#" name="myform" method="post" onsubmit="return Myvalidateform()">
+                <div class="row">
+  
+                    <!-- First Name -->
+                    <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="firstName" type="text" name="firstname" placeholder="First Name" class="form-control bg-white border-left-0 border-md">
+                    </div>
+  
+                    <!-- Last Name -->
+                    <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-user text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="lastName" type="text" name="lastname" placeholder="Last Name" class="form-control bg-white border-left-0 border-md">
+                    </div>
+  
+                    <!-- Email Address -->
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-envelope text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="email" type="email" name="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md">
+                    </div>
+  
+                    <!-- Phone Number -->
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-phone-square text-muted"></i>
+                            </span>
+                        </div>
+                        <select id="countryCode" name="countryCode" style="max-width: 80px" class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted">
+                            <option value="">+12</option>
+                            <option value="">+10</option>
+                            <option value="">+15</option>
+                            <option value="">+18</option>
+                            <option value="">+91</option>
+                            <option value="">+1</option>
+                        </select>
+                        <input id="phoneNumber" type="tel" name="phone" placeholder="Phone Number" class="form-control bg-white border-md border-left-0 pl-3">
+                    </div>.
+  
+  
+                    <!-- Job -->
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-black-tie text-muted"></i>
+                            </span>
+                        </div>
+                        <select id="job" name="jobtitle" class="form-control custom-select bg-white border-left-0 border-md">
+                            <option value="">Choose your job</option>
+                            <option value="">Designer</option>
+                            <option value="">Developer</option>
+                            <option value="">Manager</option>
+                            <option value="">Accountant</option>
+                            <option value="">Student</option>
+                        </select>
+                    </div>
+  
+                    <!-- Password -->
+                    <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="password" type="password" name="password" placeholder="Password" class="form-control bg-white border-left-0 border-md">
+                    </div>
+  
+                    <!-- Password Confirmation -->
+                    <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-lock text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="passwordConfirmation" type="text" name="passwordConfirmation" placeholder="Confirm Password" class="form-control bg-white border-left-0 border-md">
+                    </div>
+  
+                    <!-- Submit Button -->
+                    <div class="form-group col-lg-12 mx-auto mb-0">
+                        <a href="#" class="btn btn-primary btn-block py-2">
+                            <span class="font-weight-bold">Create your account</span>
+                        </a>
+                    </div>
+  
+                    <!-- Divider Text -->
+                    <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+                        <div class="border-bottom w-100 ml-5"></div>
+                        <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+                        <div class="border-bottom w-100 mr-5"></div>
+                    </div>
+  
+                    <!-- Social Login -->
+                    <div class="form-group col-lg-12 mx-auto">
+                        <a href="#" class="btn btn-primary btn-block py-2 btn-facebook">
+                            <i class="fa fa-facebook-f mr-2"></i>
+                            <span class="font-weight-bold">Continue with Facebook</span>
+                        </a>
+                        <a href="#" class="btn btn-primary btn-block py-2 btn-twitter">
+                            <i class="fa fa-twitter mr-2"></i>
+                            <span class="font-weight-bold">Continue with Twitter</span>
+                        </a>
+                    </div>
+  
+                    <!-- Already Registered -->
+                    <div class="text-center w-100">
+                        <p class="text-muted font-weight-bold">Already Registered?
+                   <!--login form-->
+ <div class="container">
+  <div class="supreme-container">
+  <!-- Button to Open the Modal -->
+ 
+  <button type="button" class="btn btn-primary mybtn " data-toggle="modal" data-target="#myModal">
+    Login
+  </button>
+  </div>
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+        <center>  <span class="modal-title">Login form</span></center>
+          <button type="button" class="close" data-dismiss="modal">×</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+    <p class="text-intro">If you're already registered then just do small login to your previous email-id or password and start your learning towards your career.</p>
+    <div class="form-div">
+         <form action="/action_page.php">
+  <div class="form-group">
+    <input type="email" class="form-control" id="email" placeholder="Registered E-Mail ID">
+  </div>
+  <div class="form-group">
+    
+    <input type="password" class="form-control" id="pwd" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input class="form-check-input" type="checkbox"> Remember me
+    </label>
+  </div>
+  <button type="submit"><a href="#popup1" title="Submit">Submit</a></button>
+  <div id="popup1" class="overlay">
+    <div class="popup">
+    <h2>Account created successfully </h2>
+    <br><br>
+    <a class="close" href="#carouselExampleIndicators">×</a>
+    <div class="content">
+    Thank you for registration!
+    <br><br>
+    Welcome to learn your favourite one coding!
+    <br><br>
+    Go back to Courses: <a href="#about">Courses</a>
+    </div>
+    </div>
+   </div>
+
+  <center><a href="#" title="Reset Password"><small>Forgot Password ?</small></a></center>
+  <button type="submit" class="btn btn-primary btn-block mybtn">Login with facebook</button>
+  <button type="submit" class="btn btn-danger btn-block mybtn">Login with Google-Plus</button>
+</form>
+    </div>
+        </div>
+        
+       
+      </div>
+    </div>
+  </div>
+  
+</div>
+                  <!--login form--> 
+                          </p>
+                    </div>
+  
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
+  </section>
+  <script>
+    function MyvalidateForm(){
+      var first= document.myform.firstname.value;
+      var last= document.myform.lastname.value;
+      
+      if (first==null || first==""){  
+        alert("Name can't be blank"); 
+  //document.getElementById('error').innerHTML = "Name can't be blank";
+        return false;  
+}
+    }
+  </script>
+<!-- job form -->
+
+<!--Footer portion-->
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+        <h3>Commence<span>Academy</span></h3>
+				<p class="footer-links">
+					<a href="#home" class="link-1">Home</a>
+					
+					<a href="#about">About</a>
+				
+					<a href="#admission">Admission</a>
+				
+					<a href="#job">Jobs</a>
+					
+					<a href="#query">Query</a>
+					
+					<a href="#contact">Contact</a>
+				</p>
+
+				<p class="footer-company-name">COMMENCE ACADEMY © 2015</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+          <svg xmlns="http://www.w3.org/2000/svg"  width="25" height="25" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+            <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+          </svg>
+					<p><span>Dighori Square 
+            Sant Krupa Kirana Shop</span>Near Pragati Hall
+            Umred Road, Nagpur</p>
+				</div><br>
+
+				<div>
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+          </svg>
+					<p>(91)-8788563858, (91)-7972669923</p>
+				</div><br>
+
+				<div>
+					<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+          </svg>
+					<p><a href="https://www.gmail.com/">commenceacademy25@gmail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About the Academy</span>
+					We support education that student wants to get in their life since feb 2015 and continuously we are doing for students.
+           These smashing academy wants to help students dream comes true and they get power for achieving it.
+          Get in touch with us.
+				</p>
+
+				<div class="footer-icons">
+
+					<a href="https://www.facebook.com/Commence-Academy-108630617680248/?ti=as" title="facebook" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+          </svg></i></a>
+					<a href="https://instagram.com/commence_academy?igshid=ajb2p5xa2678" title="Instagram"  target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+          </svg></i></a>
+					<a href="https://www.linkedin.com/" title="Linkedin"  target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+          </svg></a>
+					<a href="https://www.gmail.com/" title="Chat"  target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
+            <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            <path d="M2.165 15.803l.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z"/>
+          </svg></a>
+
+				</div>
+
+			</div>
+
+		</footer>
+<!--Footer portion-->
+
+                             <!--JavaScript-->
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript">//<![CDATA[
+//]]></script>
+
+<script type="text/javascript">
+  /// some script
+  
+  // jquery ready start
+  $(document).ready(function() {
+    // jQuery code
+  
+    //////////////////////// Prevent closing from click inside dropdown
+      $(document).on('click', '.dropdown-menu', function (e) {
+        e.stopPropagation();
+      });
+      
+    
+  }); // jquery end
+  </script>
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent) {
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "3xr90f2y"
+      }], "*")
+    }
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+  <!--top-up working-->
+  <button onclick="topFunction()" id="myBtn" title="Go to top"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+  </svg></button>
+  <script>
+    //Get the button...
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button......
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document.....
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
+<!--Watsapp pop up-->
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-b9a169e5-c595-4b56-b5f7-97a33a338914"></div>
+
+<!--for sliding--><script>
+$(".navbar a").click(function(){
+  $("body,html").animate({
+   scrollTop:$("#" + $(this).data('value')).offset().top
+  },1000)
+  
+ })
+ //for login form
+ $(function () {
+    $('input, select').on('focus', function () {
+        $(this).parent().find('.input-group-text').css('border-color', '#80bdff');
+    });
+    $('input, select').on('blur', function () {
+        $(this).parent().find('.input-group-text').css('border-color', '#ced4da');
+    });
+});
+</script>
+<!-- Course structure -->
+<script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+  
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+  
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    x[slideIndex-1].style.display = "block";  
+  }
+  </script>
+<!-- Course structure -->
+
+<!--Gallery-->
+<script>
+function gallery(){
+  var dots=document.getElementById("dots");
+  var moreText=document.getElementById("more");
+  var btnText=document.getElementById("myBt");
+  if(dots.style.display==="none"){
+    dots.style.display="inline";
+    btnText.innerHTML="Read more";
+    moreText.style.display="none";
+  }else{
+    dots.style.display="none";
+    btnText.innerHTML="Read less";
+    moreText.style.display="inline";
+  }
+}
+function gallery1(){
+  var dots1=document.getElementById("dots1");
+  var moreText1=document.getElementById("more1");
+  var btnText1=document.getElementById("myBt1");
+  if(dots1.style.display==="none"){
+    dots1.style.display="inline";
+    btnText1.innerHTML="Read more";
+    moreText1.style.display="none";
+  }else{
+    dots1.style.display="none";
+    btnText1.innerHTML="Read less";
+    moreText1.style.display="inline";
+  }
+}
+function gallery2(){
+  var dots2=document.getElementById("dots2");
+  var moreText2=document.getElementById("more2");
+  var btnText2=document.getElementById("myBt2");
+  if(dots2.style.display==="none"){
+    dots2.style.display="inline";
+    btnText2.innerHTML="Read more";
+    moreText2.style.display="none";
+  }else{
+    dots2.style.display="none";
+    btnText2.innerHTML="Read less";
+    moreText2.style.display="inline";
+  }
+}
+function gallery3(){
+  var dots3=document.getElementById("dots3");
+  var moreText3=document.getElementById("more3");
+  var btnText3=document.getElementById("myBt3");
+  if(dots3.style.display==="none"){
+    dots3.style.display="inline";
+    btnText3.innerHTML="Read more";
+    moreText3.style.display="none";
+  }else{
+    dots3.style.display="none";
+    btnText3.innerHTML="Read less";
+    moreText3.style.display="inline";
+  }
+}
+function gallery4(){
+  var dots4=document.getElementById("dots4");
+  var moreText4=document.getElementById("more4");
+  var btnText4=document.getElementById("myBt4");
+  if(dots4.style.display==="none"){
+    dots4.style.display="inline";
+    btnText4.innerHTML="Read more";
+    moreText4.style.display="none";
+  }else{
+    dots4.style.display="none";
+    btnText4.innerHTML="Read less";
+    moreText4.style.display="inline";
+  }
+}
+function gallery5(){
+  var dots5=document.getElementById("dots5");
+  var moreText5=document.getElementById("more5");
+  var btnText5=document.getElementById("myBt5");
+  if(dots5.style.display==="none"){
+    dots5.style.display="inline";
+    btnText5.innerHTML="Read more";
+    moreText5.style.display="none";
+  }else{
+    dots5.style.display="none";
+    btnText5.innerHTML="Read less";
+    moreText5.style.display="inline";
+  }
+}
+function gallery6(){
+  var dots6=document.getElementById("dots6");
+  var moreText6=document.getElementById("more6");
+  var btnText6=document.getElementById("myBt6");
+  if(dots6.style.display==="none"){
+    dots6.style.display="inline";
+    btnText6.innerHTML="Read more";
+    moreText6.style.display="none";
+  }else{
+    dots6.style.display="none";
+    btnText6.innerHTML="Read less";
+    moreText6.style.display="inline";
+  }
+}
+function gallery7(){
+  var dots7=document.getElementById("dots7");
+  var moreText7=document.getElementById("more7");
+  var btnText7=document.getElementById("myBt7");
+  if(dots7.style.display==="none"){
+    dots7.style.display="inline";
+    btnText7.innerHTML="Read more";
+    moreText7.style.display="none";
+  }else{
+    dots7.style.display="none";
+    btnText7.innerHTML="Read less";
+    moreText7.style.display="inline";
+  }
+}
+function gallery8(){
+  var dots8=document.getElementById("dots8");
+  var moreText8=document.getElementById("more8");
+  var btnText8=document.getElementById("myBt8");
+  if(dots8.style.display==="none"){
+    dots8.style.display="inline";
+    btnText8.innerHTML="Read more";
+    moreText8.style.display="none";
+  }else{
+    dots8.style.display="none";
+    btnText8.innerHTML="Read less";
+    moreText8.style.display="inline";
+  }
+}
+
+</script>
+<!--Gallery-->
+  </script>
+
+<!--Searching working-->
+<script>
+
+</script>
+<!--Searching working-->
+
+<!-- Job working -->
+
+<!-- Job working -->
+
+</body>
+
+</html>
